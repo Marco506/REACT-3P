@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "3af5",
+      "name": "Marco Medina",
+      "email": "msms",
+      "password": "12345678"
+    },
+    {
+      "id": "9520",
+      "name": "Marco",
+      "email": "pepe@pepes",
+      "password": "12345678"
+    },
+    {
+      "id": "036d",
+      "name": "Nicole",
+      "email": "nikky@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "170c",
+      "name": "Marco Antonio",
+      "email": "medina@medinaseas",
+      "password": "12345678"
+    }
+  ]
+}
