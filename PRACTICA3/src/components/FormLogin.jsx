@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { Get } from "../services/getUsers";
 import "../styles/Registro.css";
+import { useNavigate } from "react-router-dom";
 
 function FormLogin() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function obtenerUsername(event) {
-    event.preventDefault();
     setUsername(event.target.value);
   }
 
   function obtenerPassword(event) {
-    event.preventDefault();
     setPassword(event.target.value);
   }
 
@@ -27,6 +27,7 @@ function FormLogin() {
     if (validUser) {
       if (validUser.password === password) {
         alert("Inicio de sesión exitoso");
+        navigate("/home");
       } else {
         alert("Contraseña incorrecta");
       }
@@ -36,31 +37,33 @@ function FormLogin() {
   };
 
   return (
-    <form>
-      <h2>Iniciar sesión</h2>
-      <label htmlFor="username">Nombre</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        placeholder="Ingrese su nombre"
-        value={username}
-        onChange={obtenerUsername}
-        required
-      />
-      <label htmlFor="password">Contraseña</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="Ingrese su contraseña"
-        value={password}
-        onChange={obtenerPassword}
-        required
-      />
-      <button onClick={cargarLogin}>Iniciar</button>
-      <p>¿No tienes una cuenta? <a href="/">Registrarse</a></p>
-    </form>
+    <div className="body">
+      <form>
+        <h2 className="form-title">Iniciar sesión</h2>
+        <label htmlFor="username" className="form-label">Nombre</label>
+        <input
+          type="text"
+          id="username"
+          className="form-input"
+          placeholder="Ingrese su nombre"
+          value={username}
+          onChange={obtenerUsername}
+          required
+        />
+        <label htmlFor="password" className="form-label">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          className="form-input"
+          placeholder="Ingrese su contraseña"
+          value={password}
+          onChange={obtenerPassword}
+          required
+        />
+        <button className="form-submit" onClick={cargarLogin}>Iniciar</button>
+        <p className="form-info">¿No tienes una cuenta? <a href="/" className="form-link">Registrarse</a></p>
+      </form>
+    </div>
   );
 }
 
