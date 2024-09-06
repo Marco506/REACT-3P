@@ -1,0 +1,99 @@
+/* Login.css */
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212; 
+  }
+  
+  /* Formulario de inicio de sesión */
+  #login-form {
+    background: #1e1e1e; 
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    width: 100%;
+    max-width: 350px;
+    color: #e0e0e0; 
+  }
+  
+  /* Título del formulario de inicio de sesión */
+  .login-form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #ffffff; 
+  }
+  
+  /* Etiquetas del formulario de inicio de sesión */
+  .login-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #b0b0b0; 
+  }
+  
+  /* Campos de entrada del formulario de inicio de sesión */
+  .login-form-input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    background: #282828; 
+    color: #e0e0e0; 
+    box-sizing: border-box;
+    outline: none; 
+  }
+  
+  /* Cambios al enfocar el campo */
+  .login-form-input:focus {
+    background: #333333; 
+    border-color: #28a745; 
+  }
+  
+  /* Botón de envío del formulario de inicio de sesión */
+  .login-form-submit {
+    background-color: #28a745; 
+    color: #ffffff; 
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-form-submit:hover {
+    background-color: #218838;
+  }
+  
+  /* Enlace de información adicional en el formulario de inicio de sesión */
+  .login-form-info {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Enlace en el formulario de inicio de sesión */
+  .login-form-link {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-form-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mensaje de error en el formulario de inicio de sesión */
+  .login-form-error {
+    color: #ff6f6f; 
+    font-size: 14px;
+    margin-bottom: 1rem;
+  }
+  

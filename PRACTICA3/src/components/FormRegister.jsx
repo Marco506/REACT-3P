@@ -39,35 +39,35 @@ function FormRegister() {
   };
 
   return (
-    <div className="body">
-      <form>
-        <h2 className="form-title">Registro</h2>
-        <label htmlFor="name" className="form-label">Nombre</label>
+    <div className="register-container">
+      <form id="register-form" onSubmit={cargar}>
+        <h2 className="register-form-title">Registro</h2>
+        <label htmlFor="name" className="register-form-label">Nombre</label>
         <input
           type="text"
           placeholder="Ingrese su Nombre"
           id="name"
-          className="form-input"
+          className="register-form-input"
           value={username}
           onChange={guardarUsuario}
           required
         />
-        <label htmlFor="email" className="form-label">Email</label>
+        <label htmlFor="email" className="register-form-label">Email</label>
         <input
           type="email"
           placeholder="Ingrese un email"
           id="email"
-          className="form-input"
+          className="register-form-input"
           value={email}
           onChange={guardarEmail}
           required
         />
-        <label htmlFor="password" className="form-label">Contraseña</label>
+        <label htmlFor="password" className="register-form-label">Contraseña</label>
         <input
           type="password"
           placeholder="Ingrese una contraseña"
           id="password"
-          className="form-input"
+          className="register-form-input"
           value={password}
           onChange={guardarPassword}
           required
@@ -75,13 +75,13 @@ function FormRegister() {
         <input
           type="submit"
           value="Registrar"
-          className="form-submit"
-          onClick={cargar}
+          className="register-form-submit"
         />
-        <p className="form-info">¿Ya tienes una cuenta? <a href="/login" className="form-link">Iniciar sesión</a></p>
+        <p className="register-form-info">¿Ya tienes una cuenta? <a href="/login" className="register-form-link">Iniciar sesión</a></p>
       </form>
     </div>
   );
 }
 
 export default FormRegister;
+

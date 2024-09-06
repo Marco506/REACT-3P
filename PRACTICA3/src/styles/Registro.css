@@ -1,92 +1,98 @@
-/* Estilos generales para el body */
-.body {
-  font-family: Arial, sans-serif;
-  background-color: #2c3e50; /* Fondo oscuro */
-  margin: 0;
-  padding: 0;
+/* Registro.css */
+
+/* Contenedor del formulario de registro */
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #ecf0f1; /* Texto claro */
+  background-color: #121212;
 }
 
-/* Contenedor del formulario */
-form {
-  background-color: #34495e; /* Fondo del formulario más oscuro */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+/* Formulario de registro */
+#register-form {
+  background: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   padding: 2rem;
-  max-width: 400px;
   width: 100%;
-  text-align: center;
+  max-width: 400px;
+  color: #e0e0e0; 
 }
 
-/* Título del formulario */
-.form-title {
-  color: #ecf0f1; /* Color claro para el título */
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+/* Título del formulario de registro */
+.register-form-title {
+  font-size: 26px;
   font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ffffff; 
 }
 
-/* Estilo para las etiquetas del formulario */
-.form-label {
+/* Etiquetas del formulario de registro */
+.register-form-label {
   display: block;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #bdc3c7; /* Color de texto más claro para las etiquetas */
+  font-weight: bold;
+  color: #b0b0b0; 
 }
 
-/* Estilo para los campos de entrada */
-.form-input {
-  width: calc(100% - 2rem);
+/* Campos de entrada del formulario de registro */
+.register-form-input {
+  width: 100%;
+  padding: 0.75rem;
   margin-bottom: 1rem;
-  padding: 0.75rem;
-  border: 1px solid #7f8c8d; /* Borde más oscuro */
-  border-radius: 4px;
-  font-size: 1rem;
-  background-color: #2c3e50; /* Fondo oscuro para los campos */
-  color: #ecf0f1; /* Texto claro */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #333333; 
+  border-radius: 8px;
+  background: #282828; 
+  color: #e0e0e0; 
+  box-sizing: border-box;
+  outline: none; 
 }
 
-.form-input:focus {
-  border-color: #1abc9c; /* Color de borde en el foco */
-  box-shadow: 0 0 5px rgba(26, 188, 156, 0.5); /* Sombra verde en foco */
-  outline: none;
+/* Cambios al enfocar el campo */
+.register-form-input:focus {
+  background: #333333; 
+  border-color: #007bff; 
 }
 
-/* Estilo para el botón de envío */
-.form-submit {
-  background-color: #1abc9c; /* Fondo del botón en color verde */
-  color: #fff;
+/* Botón de envío del formulario de registro */
+.register-form-submit {
+  background-color: #007bff;
+  color: #ffffff;
   border: none;
-  cursor: pointer;
   padding: 0.75rem;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
   transition: background-color 0.3s ease;
 }
 
-.form-submit:hover {
-  background-color: #16a085; /* Color del botón en hover */
+.register-form-submit:hover {
+  background-color: #0056b3;
 }
 
-/* Enlace para navegación */
-.form-link {
-  color: #1abc9c; /* Color del enlace */
+/* Enlace de información adicional en el formulario de registro */
+.register-form-info {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Enlace en el formulario de registro */
+.register-form-link {
+  color: #007bff;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.form-link:hover {
+.register-form-link:hover {
   text-decoration: underline;
 }
 
-/* Mensaje informativo */
-.form-info {
-  font-size: 0.875rem;
-  color: #bdc3c7; /* Color claro para el texto informativo */
+/* Mensaje de error en el formulario de registro */
+.register-form-error {
+  color: #ff6f6f;
+  font-size: 14px;
+  margin-bottom: 1rem;
 }
-
-

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Get } from "../services/getUsers";
-import "../styles/Registro.css";
+import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 
 function FormLogin() {
@@ -20,8 +20,6 @@ function FormLogin() {
     event.preventDefault();
 
     let userList = await Get();
-    console.log(userList);
-
     let validUser = userList.find((user) => user.name === username);
 
     if (validUser) {
@@ -37,34 +35,35 @@ function FormLogin() {
   };
 
   return (
-    <div className="body">
-      <form>
-        <h2 className="form-title">Iniciar sesión</h2>
-        <label htmlFor="username" className="form-label">Nombre</label>
+    <div className="login-container">
+      <form id="login-form" onSubmit={cargarLogin}>
+        <h2 className="login-form-title">Iniciar sesión</h2>
+        <label htmlFor="username" className="login-form-label">Nombre</label>
         <input
           type="text"
           id="username"
-          className="form-input"
+          className="login-form-input"
           placeholder="Ingrese su nombre"
           value={username}
           onChange={obtenerUsername}
           required
         />
-        <label htmlFor="password" className="form-label">Contraseña</label>
+        <label htmlFor="password" className="login-form-label">Contraseña</label>
         <input
           type="password"
           id="password"
-          className="form-input"
+          className="login-form-input"
           placeholder="Ingrese su contraseña"
           value={password}
           onChange={obtenerPassword}
           required
         />
-        <button className="form-submit" onClick={cargarLogin}>Iniciar</button>
-        <p className="form-info">¿No tienes una cuenta? <a href="/" className="form-link">Registrarse</a></p>
+        <button type="submit" className="login-form-submit">Iniciar</button>
+        <p className="login-form-info">¿No tienes una cuenta? <a href="/" className="login-form-link">Registrarse</a></p>
       </form>
     </div>
   );
 }
 
 export default FormLogin;
+

@@ -1,12 +1,10 @@
-
-
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min'; // Importa Bootstrap JS para funcionalidades interactivas
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">Navbar</Link>
         <button 
@@ -60,3 +58,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
