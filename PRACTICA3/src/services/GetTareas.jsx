@@ -1,7 +1,7 @@
 // GET
-export async function GetUsers() {
+export async function GetTareas() {
     try {
-      const response = await fetch("http://localhost:3000/users");
+      const response = await fetch("http://localhost:3000/tareas");
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }

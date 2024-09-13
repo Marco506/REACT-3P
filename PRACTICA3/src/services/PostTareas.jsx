@@ -1,10 +1,10 @@
 
   
-  // PUT
-  export async function PutUsers(data, id) {
+  // POST
+  export async function PostTareas(data) {
     try {
-      const response = await fetch("http://localhost:3000/users" + id, {
-        method: "PUT",
+      const response = await fetch("http://localhost:3000/tareas", {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -15,10 +15,10 @@
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
   
-      const responseData = await response.json();
-      return responseData;
+      const result = await response.json();
+      return result;
     } catch (error) {
-      console.error("Error in PUT request:", error.message);
+      console.error("Error in POST request:", error.message);
       throw error;
     }
   }

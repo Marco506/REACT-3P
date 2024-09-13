@@ -1,14 +1,14 @@
 
   
   // POST
-  export async function PostUsers(data) {
+  export async function PostProductos(productos) {
     try {
-      const response = await fetch("http://localhost:3000/users", {
+      const response = await fetch("http://localhost:3000/productos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(productos),
       });
   
       if (!response.ok) {

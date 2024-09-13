@@ -1,0 +1,61 @@
+/* styles.css */
+
+.sel-form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sel-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .sel-upload-button {
+    display: flex;
+    align-items: center;
+    background: #ffbb33;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .sel-upload-button span {
+    margin-right: 10px;
+  }
+  
+  .sel-text-input, .sel-number-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .sel-category-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+  }
+  
+  .sel-submit-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .sel-submit-button:hover {
+    background: #0056b3;
+  }
+  

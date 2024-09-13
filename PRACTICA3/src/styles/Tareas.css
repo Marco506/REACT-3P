@@ -1,0 +1,64 @@
+/* Tareas.css */
+
+.Tareas {
+  padding: 20px;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.inputTarea {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.agregarTarea {
+  padding: 5px 10px;
+}
+
+.tareasContainer {
+  margin-top: 20px;
+}
+
+.tareasContainer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tareaItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.botonEliminar, .botonEditar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botonEliminar:hover {
+  color: red;
+}
+
+.botonEditar:hover {
+  color: blue;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+  

@@ -1,9 +1,7 @@
-
-  
-  // PUT
-  export async function PutUsers(data, id) {
+// PUT
+export async function PutProductos(id, data) {
     try {
-      const response = await fetch("http://localhost:3000/users" + id, {
+      const response = await fetch(`http://localhost:3000/productos/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

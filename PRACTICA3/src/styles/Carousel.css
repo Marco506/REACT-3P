@@ -1,0 +1,20 @@
+.carousel {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    height: 400px; 
+  }
+  
+  .carousel-item {
+    height: 100%;
+  }
+  
+  .carousel-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+  }
+  
+  

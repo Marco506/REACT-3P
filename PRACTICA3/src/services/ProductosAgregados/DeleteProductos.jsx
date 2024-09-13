@@ -1,8 +1,7 @@
-  
   // DELETE
-  export async function DeleteUsers(id) {
+  export async function DeleteProductos(id) {
     try {
-      const response = await fetch(`http://localhost:3000/users/${id}`, {
+      const response = await fetch(`http://localhost:3000/productos/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -16,4 +15,3 @@
       console.error("Error deleting task:", error);
     }
   }
-  

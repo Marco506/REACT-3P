@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { Post } from "../services/PostUsers";
-import { Get } from "../services/getUsers";
+import { PostUsers } from "../services/PostUsers";
+import { GetUsers } from "../services/GetUsers";
 import "../styles/Registro.css";
+import { useNavigate } from "react-router-dom";
 
 function FormRegister() {
+
+  const Navigate = useNavigate()
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +26,7 @@ function FormRegister() {
   const cargar = async (event) => {
     event.preventDefault();
 
-    let listUsers = await Get();
+    let listUsers = await GetUsers();
     let userRegister = listUsers.find((user) => user.email === email);
     if (userRegister) {
       return alert("El correo ya existe");
@@ -33,9 +36,10 @@ function FormRegister() {
       return alert("La contraseña debe contener más de 8 dígitos");
     }
 
-    await Post({ name: username, email: email, password: password });
+    await PostUsers({ name: username, email: email, password: password });
 
     alert("Registro exitoso");
+    Navigate("/Login")
   };
 
   return (

@@ -1,5 +1,9 @@
+import Carousel from "../components/Carousel";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import PageHome from "../components/PageHome";
+
+
 
 
 function Home() {
@@ -7,6 +11,9 @@ function Home() {
     <div>
         <Navbar />
         <PageHome />
+        <Carousel />
+        <Footer />
+        
     </div>
   )
 }

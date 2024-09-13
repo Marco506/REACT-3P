@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { Get } from "../services/getUsers";
+import { GetUsers } from "../services/GetUsers";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 
@@ -19,11 +20,12 @@ function FormLogin() {
   const cargarLogin = async (event) => {
     event.preventDefault();
 
-    let userList = await Get();
+    let userList = await GetUsers();
     let validUser = userList.find((user) => user.name === username);
 
     if (validUser) {
       if (validUser.password === password) {
+        localStorage.setItem("Autenticado", "true")
         alert("Inicio de sesión exitoso");
         navigate("/home");
       } else {
