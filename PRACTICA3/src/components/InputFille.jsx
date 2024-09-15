@@ -5,9 +5,8 @@ import { PostProductos } from '../services/ProductosAgregados/PostProductos';
 import { GetProductos } from '../services/ProductosAgregados/GetProductos';
 import { DeleteProductos } from '../services/ProductosAgregados/DeleteProductos';
 import { PutProductos } from '../services/ProductosAgregados/PutProductos';
-import "../styles/InputFille.css";
+import "../styles/InputFille.css"; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from "./Footer";
 
 function PageProductos() {
   const [inputDescripcion, setInputDescripcion] = useState("");
@@ -41,13 +40,14 @@ function PageProductos() {
       alert("Todos los campos deben ser completados");
       return;
     }
-    await PostProductos({ img: inputImages, descripcion: inputDescripcion, precio: inputPrecio, categoria: inputCategoria });
+    await PostProductos({ descripcion: inputDescripcion, precio: inputPrecio, categoria: inputCategoria, img: inputImages });
     const updatedProductos = await GetProductos();
     setProductos(updatedProductos);
     setInputDescripcion("");
     setInputPrecio("");
     setInputCategoria("");
     setInputImages([]);
+
     setAlertVisible(true);
     setTimeout(() => setAlertVisible(false), 3000);
   };
@@ -72,72 +72,79 @@ function PageProductos() {
   };
 
   return (
-    <div>
-      <div className="ProductForm">
-        <h1>Agregar Producto</h1>
-        <div className="inputContainer">
-          <label>
-            <input
-              type="file"
-              hidden
-              multiple
-              onChange={handleImageChange}
-            />
-            <span>Agregar Imágenes</span>
-          </label>
+    <div className="product-form">
+      <h1>Agregar Producto</h1>
+      <div className="input-container">
+        <label className="file-label">
           <input
-            type="text"
-            placeholder="Descripción"
-            value={inputDescripcion}
-            onChange={e => setInputDescripcion(e.target.value)}
-            className="inputField"
+            type="file"
+            className="file-input"
+            multiple
+            onChange={handleImageChange}
           />
-          <input
-            type="number"
-            placeholder="Precio"
-            value={inputPrecio}
-            onChange={e => setInputPrecio(e.target.value)}
-            className="inputField"
-          />
-          <select
-            value={inputCategoria}
-            onChange={e => setInputCategoria(e.target.value)}
-            className="inputField"
-          >
-            <option value="" disabled>Categoría</option>
-            <option value="Vestido">Vestido</option>
-            <option value="Camisas">Camisas</option>
-            <option value="Shorts">Shorts</option>
-          </select>
-          <button onClick={addProducto} className="submitButton">Agregar</button>
-          {alertVisible && <div className="alert alert-secondary" role="alert">Se agregó un nuevo producto</div>}
-        </div>
-        <div className="productosContainer">
-          <ul>
-            {productos.map(producto => (
-              <li key={producto.id} className="productoItem">
-                {producto.img && Array.isArray(producto.img) ? (
-                  producto.img.map((src, index) => <img key={index} src={src} alt={`Producto ${index}`} className="productImage" />)
-                ) : <div>No Image</div>}
-                <div>{producto.descripcion}</div>
-                <div>{producto.precio}</div>
-                <div>{producto.categoria}</div>
-                <div className="buttonContainer">
-                  <button className="botonEliminar" onClick={() => deleteProducto(producto.id)}>
-                    <FaTrash />
-                  </button>
-                  <button className="botonEditar" onClick={() => editProducto(producto.id, producto.descripcion, producto.precio, producto.categoria)}>
-                    <BiSolidEditAlt />
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <span>Agregar Imágenes</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Descripción"
+          value={inputDescripcion}
+          onChange={e => setInputDescripcion(e.target.value)}
+          className="input-field"
+        />
+        <input
+          type="number"
+          placeholder="Precio"
+          value={inputPrecio}
+          onChange={e => setInputPrecio(e.target.value)}
+          className="input-field"
+        />
+        <select
+          value={inputCategoria}
+          onChange={e => setInputCategoria(e.target.value)}
+          className="input-field"
+        >
+          <option value="" disabled>Categoría</option>
+          <option value="Vestido">Vestido</option>
+          <option value="Camisas">Camisas</option>
+          <option value="Shorts">Shorts</option>
+          <option value="Trajes de baño">Trajes de baño</option>
+        </select>
+        <button onClick={addProducto} className="submit-button">Agregar</button>
+        {alertVisible && <div className="alert alert-secondary" role="alert">Se agregó un nuevo producto</div>}
       </div>
-      <footer><Footer /></footer>
+      <div className="productos-container">
+        {productos.map(producto => (
+          <div key={producto.id} className="producto-card">
+            <div className="producto-image-container">
+              {producto.img && Array.isArray(producto.img) ? (
+                producto.img.map((src, index) => (
+                  <img key={index} src={src} alt={`Producto ${index}`} className="producto-image" />
+                ))
+              ) : (
+                <div className="no-image">No Image</div>
+              )}
+            </div>
+            <div className="producto-details">
+              <h3>{producto.descripcion}</h3>
+              <p>Precio: ${producto.precio}</p>
+              <p>Categoría: {producto.categoria}</p>
+              <div className="button-container">
+                <button className="delete-button" onClick={() => deleteProducto(producto.id)}>
+                  <FaTrash />
+                </button>
+                <button className="edit-button" onClick={() => editProducto(producto.id, producto.descripcion, producto.precio, producto.categoria)}>
+                  <BiSolidEditAlt />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default PageProductos;
+
+
+

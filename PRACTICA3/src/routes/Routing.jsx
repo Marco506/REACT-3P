@@ -8,6 +8,9 @@ import Tareas from "../pages/Tareas"
 import ProtectedRoute from '../ProtectedRoute';
 import Contactanos from '../pages/Contactanos';
 import AgregarProductos from '../pages/AgregarProductos';
+import BlusasYCamisas from '../pages/BlusasYCamisas';
+import Vestidos from '../pages/Vestidos';
+import TrajesBaño from '../pages/TrajesBaño';
 
 
 
@@ -21,6 +24,9 @@ const Routing = () => {
        <Route path='Tareas' element={<ProtectedRoute><Tareas /></ProtectedRoute>} />
        <Route path='/Contactanos' element={<ProtectedRoute><Contactanos /></ProtectedRoute>} />
        <Route path='/AgregarProductos' element={<AgregarProductos />} />
+       <Route path='/BlusasYCamisas' element={<BlusasYCamisas />} />
+       <Route path='/Vestidos' element={<Vestidos />} />
+       <Route path='/TrajesBaño' element={<TrajesBaño />} />
      
        
        

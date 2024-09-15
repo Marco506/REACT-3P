@@ -1,0 +1,71 @@
+.navbar {
+    background-color: #343a40;
+  }
+  
+  .navbar-logo {
+    height: 80px;
+    width: auto;
+    margin-right: 10px;
+    border-radius: 50px;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16' /%3E%3C/svg%3E");
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #e91e63;
+    text-decoration: underline;
+  }
+  
+  .dropdown-menu {
+    background-color: #333;
+    border: 1px solid #444;
+  }
+  
+  .dropdown-menu .dropdown-item {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #555;
+  }
+  
+  .form-control {
+    border-radius: 20px;
+    border: 1px solid #e91e63;
+  }
+  
+  .btn-light {
+    background-color: #e91e63;
+    border-color: #e91e63;
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .btn-light:hover {
+    background-color: #d81b60;
+    border-color: #d81b60;
+  }
+  

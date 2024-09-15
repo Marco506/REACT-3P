@@ -1,18 +1,22 @@
 import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-
+import"../styles/Navbar.css"
+import logo from '../img/logo.png'; 
 
 function Navbar() {
-  const Navigate = useNavigate()
+  const navigate = useNavigate();
+
   function cerrarSesion() {
-    localStorage.removeItem("Autenticado")
-    Navigate("/")
+    localStorage.removeItem("Autenticado");
+    navigate("/");
   }
-  
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/Home">Inicio</Link>
+        <Link className="navbar-brand" to="/Home">
+          <img src={logo} alt="Logo" className="navbar-logo" /> 
+        </Link>
         <button 
           className="navbar-toggler" 
           type="button" 
@@ -37,16 +41,16 @@ function Navbar() {
                 data-bs-toggle="dropdown" 
                 aria-expanded="false"
               >
-                Coleccion
+                Colección
               </Link>
               <ul className="dropdown-menu">
                 <li><Link className="dropdown-item" to="/Tareas">Tareas</Link></li>
-                <li><Link className="dropdown-item" to="/Home">Camisas y blusas</Link></li>
+                <li><Link className="dropdown-item" to="/BlusasYCamisas">Blusas y Camisas</Link></li>
                 <li><Link className="dropdown-item" to="/Home">Faldas</Link></li>
-                <li><Link className="dropdown-item" to="/Home">Vestidos</Link></li>
+                <li><Link className="dropdown-item" to="/Vestidos">Vestidos</Link></li>
                 <li><Link className="dropdown-item" to="/Home">Pantalones y Shorts</Link></li>
-                <li><Link className="dropdown-item" to="/Home">Trajes de baño </Link></li>
-                <li><div className="dropdown-divider"></div></li> {/* Reemplaza <hr> con <div> */}
+                <li><Link className="dropdown-item" to="/TrajesBaño">Trajes de baño</Link></li>
+                <li><div className="dropdown-divider"></div></li>
                 <li><Link className="dropdown-item" to="/Home">Something else here</Link></li>
               </ul>
             </li>
@@ -54,10 +58,10 @@ function Navbar() {
               <span className="nav-link disabled" aria-disabled="true">Disabled</span>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/AgregarProductos">AgregarProductos</Link>
+              <Link className="nav-link active" aria-current="page" to="/AgregarProductos">Agregar Productos</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/Contactanos">Contactanos</Link>
+              <Link className="nav-link active" aria-current="page" to="/Contactanos">Contáctanos</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" onClick={cerrarSesion} to="/">Salir</Link>
@@ -74,4 +78,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
 
