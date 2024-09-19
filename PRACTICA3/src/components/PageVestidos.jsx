@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { GetProductos } from '../services/ProductosAgregados/GetProductos';
 import '../styles/Blusas.css';
+import ModalCorreo from './ModalCorreo';
 
 function PageVestidos() {
 
@@ -14,6 +15,8 @@ function PageVestidos() {
     cargarProductos();
   }, []);
 
+
+
   return (
     <div className='blusas-container'>
         <h1 className='blusas-title'>Vestidos</h1> 
@@ -24,8 +27,10 @@ function PageVestidos() {
                 <img key={index} src={src} alt={producto.descripcion} className='blusas-product-image'/>
               ))}
               <div className='blusas-card-content'>
+                <h2 className="blusas-product-description">{producto.nameProduct}</h2>
                 <h2 className='blusas-product-description'>{producto.descripcion}</h2>
                 <p className='blusas-product-price'>Precio: ${producto.precio}</p>
+                <ModalCorreo />
               </div>
             </div>
           ))}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GetProductos } from '../services/ProductosAgregados/GetProductos';
 import '../styles/Blusas.css';
+import ModalCorreo from './ModalCorreo';
 
 function PageBlusasYCamisas() {
   const [productos, setProductos] = useState([]);
@@ -26,8 +27,10 @@ function PageBlusasYCamisas() {
               <img key={index} src={src} alt={producto.descripcion} className="blusas-product-image" />
             ))}
             <div className="blusas-card-content">
-              <h2 className="blusas-product-description">{producto.descripcion}</h2>
+              <h2 className="blusas-product-description">{producto.nameProduct}</h2>
+              <h5 className="blusas-product-description">{producto.descripcion}</h5>
               <p className="blusas-product-price">Precio: ${producto.precio}</p>
+              <ModalCorreo />
             </div>
           </div>
         ))}

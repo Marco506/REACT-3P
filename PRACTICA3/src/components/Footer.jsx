@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Footer.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Maps from './Maps';
 
 
 function Footer() {
@@ -12,6 +13,7 @@ function Footer() {
           <p>Email: <a href="juli_seams@gmail.com">juli_seams@gmail.com</a></p>
           <p>Teléfono: +506 85105125</p>
           <p>Dirección:Roble, Puntarenas, Costa Rica</p>
+          <Maps />
         </div>
         <div className="footer-section">
           <h3>Redes Sociales</h3>

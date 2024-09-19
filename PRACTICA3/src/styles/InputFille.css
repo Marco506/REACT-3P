@@ -70,7 +70,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: calc(25% - 20px); /* Cuatro cartas por fila */
+  width: calc(20% - 20px); /* Cuatro cartas por fila */
   box-sizing: border-box;
   transition: transform 0.2s ease-in-out;
   /* Reduce el tamaño de la carta */

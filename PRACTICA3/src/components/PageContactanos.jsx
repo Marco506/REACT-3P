@@ -1,76 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/Contactanos.css';
+import emailjs from '@emailjs/browser';
 
 function PageContactanos() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  
+  const sendEmail = (event) => {
+    event.preventDefault();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+    emailjs.sendForm("service_dc8wd2j", "template_wi74xoh", event.target, "HzbKWKbh_CgF2RBKC")
+    .then(Response=> console.log(Response))
+    .catch(error => console.log(error))
+  }
+  return ( 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí podrías manejar el envío del formulario, por ejemplo, con una API
-    alert('Mensaje enviado!');
-    // Resetear el formulario después del envío
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-  };
+    <div className='body-contactanos'>
+      <h1 className='title-form'>Contact Us</h1>
+      <form className='form-mail' onSubmit={sendEmail}>
+        <label>Name</label>
+        <input type="text" name='user_name' />
+        <hr />
 
-  return (
-    <div className="contactanos-container" id="contactanos-container">
-      <h1 id="contactanos-title">Contáctanos</h1>
-      <form onSubmit={handleSubmit} className="contactanos-form" id="contactanos-form">
-        <div className="form-group" id="form-group-name">
-          <label htmlFor="name" id="name-label">Nombre:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="form-input"
-          />
-        </div>
-        <div className="form-group" id="form-group-email">
-          <label htmlFor="email" id="email-label">Correo Electrónico:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="form-input"
-          />
-        </div>
-        <div className="form-group" id="form-group-message">
-          <label htmlFor="message" id="message-label">Mensaje:</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            className="form-textarea"
-          ></textarea>
-        </div>
-        <button type="submit" className="submit-button" id="submit-button">Enviar</button>
+        <label>Email</label>
+        <input type="email" name='user_email' />
+        <hr />
+
+        <label>Message</label>
+        <textarea name="user_message" id="" cols="30" rows="10"></textarea>
+        <hr />
+        <button>Send</button>
       </form>
     </div>
-  );
+  )
 }
 
 export default PageContactanos;

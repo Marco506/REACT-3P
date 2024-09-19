@@ -1,8 +1,7 @@
 import React from 'react';
 import "../styles/PageHome.css";
-import IMG2 from "../img/IMG2.jpg";
-import IMG3 from "../img/IMG3.jpg";
 import { Link } from 'react-router-dom'; 
+import PagePromociones from './PagePromociones';
 
 function PageHome() {
   return (
@@ -24,33 +23,8 @@ function PageHome() {
         <p className="page-home__intro-text">
           Nos alegra que estés aquí. En Juli_Seams, te ofrecemos una experiencia de compra única con una amplia variedad de colecciones de ropa. Explora nuestras elegantes y modernas opciones para hombres, mujeres y niños, diseñadas para adaptarse a todos los estilos y ocasiones.
         </p>
-        <div className="page-home__product-images">
-          <img src={IMG2} alt="Ropa para hombres" className="page-home__product-image" />
-          <img src={IMG3} alt="Ropa para mujeres y niños" className="page-home__product-image" />
-        </div>
       </section>
-      <section className="page-home__new-arrivals">
-        <h2 className="page-home__section-title">Novedades</h2>
-        <div className="page-home__new-arrivals-container">
-          {/* Ejemplo de productos nuevos */}
-          <div className="page-home__new-arrival">
-            <img src={IMG2} alt="Novedad 1" className="page-home__new-arrival-image" />
-            <div className="page-home__new-arrival-details">
-              <h3 className="page-home__new-arrival-title">Camisa Elegante</h3>
-              <p className="page-home__new-arrival-description">Una camisa moderna y sofisticada perfecta para cualquier ocasión.</p>
-              <Link to="/productos/novedad-1" className="page-home__new-arrival-cta">Ver Más</Link>
-            </div>
-          </div>
-          <div className="page-home__new-arrival">
-            <img src={IMG3} alt="Novedad 2" className="page-home__new-arrival-image" />
-            <div className="page-home__new-arrival-details">
-              <h3 className="page-home__new-arrival-title">Vestido de Verano</h3>
-              <p className="page-home__new-arrival-description">Un vestido ligero y cómodo para disfrutar del verano con estilo.</p>
-              <Link to="/productos/novedad-2" className="page-home__new-arrival-cta">Ver Más</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PagePromociones />
       <section className="page-home__values">
         <h2 className="page-home__section-title">Nuestros Valores</h2>
         <div className="page-home__values-container">
@@ -68,6 +42,7 @@ function PageHome() {
           </div>
         </div>
       </section>
+      
       <section className="page-home__explore">
         <h2 className="page-home__section-title">Explora Más</h2>
         <div className="page-home__explore-container">

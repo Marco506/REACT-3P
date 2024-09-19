@@ -1,4 +1,5 @@
 /* Estilos generales para la página principal */
+
 .page-home__container {
   padding: 20px;
   max-width: 1200px;
@@ -13,13 +14,12 @@
 }
 
 .page-home__main-image-container {
-  position: relative;
   margin-bottom: 30px; /* Asegura que haya un margen debajo de la imagen principal */
 }
 
 .page-home__main-image {
   width: 100%;
-  max-width: 900px; /* Ajusta el tamaño máximo de la imagen principal */
+  max-width: 1300px; /* Ajusta el tamaño máximo de la imagen principal */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -42,7 +42,6 @@
 
 .page-home__title {
   font-size: 2.5em;
-  color: #2c3e50;
   margin-top: 20px;
 }
 
