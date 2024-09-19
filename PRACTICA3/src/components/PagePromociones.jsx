@@ -33,12 +33,13 @@ function PagePromociones() {
                         <div className='blusas-card-content'>
                             <h2 className="blusas-product-description">{producto.nameProduct}</h2>
                             <h2 className='blusas-product-description'>{producto.descripcion}</h2>
-                            <p className='blusas-product-price'>Precio: ${producto.precio}</p>
+                            <p className='blusas-product-price'>Precio:  ₡{producto.precio}</p>
                             <ModalCorreo />
                         </div>
                     </div>
                 ))}
             </div>
+            
         </div>
     );
 }

@@ -16,9 +16,11 @@ function PageProductos() {
   const [inputCategoria, setInputCategoria] = useState("");
   const [inputImages, setInputImages] = useState([]);
   const [productos, setProductos] = useState([]);
-  
+  //HOOKS ALERTAS
+  const [alert3, setAlert3] = useState(false)
+  const [alert, setAlert] = useState(false)
   const [alertVisible, setAlertVisible] = useState(false);
-
+  //MODALES
   const [showModal, setShowModal] = useState(false);
   const [correctProduct, setCorrectProduct] = useState(null);
 
@@ -34,7 +36,7 @@ function PageProductos() {
     fetchProductos(); 
   }, []);
 
-  const handleImageChange = (event) => {
+  const imagenBase64 = (event) => {
     const files = Array.from(event.target.files);
     Promise.all(files.map(file => new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -48,7 +50,10 @@ function PageProductos() {
 
   const addProducto = async () => {
     if (!inputNameProduct || !inputDescripcion || !inputPrecio || !inputCategoria || inputImages.length === 0) {
-      alert("Todos los campos deben ser completados");
+     setAlert(true)
+     setTimeout(() => setAlert(false), 3000 )
+      
+  
       return;
     }
     try {
@@ -66,7 +71,7 @@ function PageProductos() {
       console.error('Error al agregar producto:', error);
     }
   };
-
+//ELIMINAR EL PRODUCTO
   const deleteProducto = async (id) => {
     try {
       await DeleteProductos(id);
@@ -75,7 +80,7 @@ function PageProductos() {
       console.error('Error al eliminar producto:', error);
     }
   };
-
+//EDITAR PRODUCTO
   const editProducto = (producto) => {
     setCorrectProduct(producto);
     setInputNameProduct(producto.nameProduct);
@@ -88,11 +93,14 @@ function PageProductos() {
 
   const editSubmit = async () => {
     if (!inputNameProduct || !inputDescripcion || !inputPrecio || !inputCategoria) {
-      alert("Todos los campos deben ser completados");
+      setAlert3(true)
+     setTimeout(() => setAlert3(false), 3000 )
+      
       return;
     }
     try {
       await PutProductos(correctProduct.id, {
+        ...correctProduct, // Mantiene todas las propiedades de 'correctProduct'
         nameProduct: inputNameProduct,
         descripcion: inputDescripcion,
         precio: inputPrecio,
@@ -116,7 +124,7 @@ function PageProductos() {
             type="file"
             className="file-input"
             multiple
-            onChange={handleImageChange}
+            onChange={imagenBase64}
           />
           <span>Agregar Imágenes</span>
         </label>
@@ -156,6 +164,8 @@ function PageProductos() {
           <option value="Promociones">Promociones</option>
         </select>
         <button onClick={addProducto} className="submit-button">Agregar</button>
+
+        {alert && <div className="alert alert-danger" role="alert">Los espacios no pueden estar vacios</div>}
         {alertVisible && <div className="alert alert-secondary" role="alert">Se agregó un nuevo producto</div>}
       </div>
       <div className="productos-container">
@@ -173,7 +183,7 @@ function PageProductos() {
             <div className="producto-details">
               <h3>{producto.nameProduct}</h3>
               <h5>{producto.descripcion}</h5>
-              <p>Precio: ${producto.precio}</p>
+              <p>Precio:  ₡{producto.precio}</p>
               <p>Categoría: {producto.categoria}</p>
               <div className="button-container">
                 <button className="delete-button" onClick={() => deleteProducto(producto.id)}>
@@ -187,7 +197,12 @@ function PageProductos() {
           </div>
         ))}
       </div>
-      {/* Modal para editar producto */}
+
+
+
+
+      
+      {/* MODAL PARA EDITAR EL PRODUCTO */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Editar Producto</Modal.Title>
@@ -231,11 +246,12 @@ function PageProductos() {
               type="file"
               className="file-input"
               multiple
-              onChange={handleImageChange}
+              onChange={imagenBase64}
             />
             <span>Agregar Imágenes</span>
           </label>
           <button onClick={editSubmit}>Guardar Cambios</button>
+          {alert3 && <div className="alert alert-secondary" role="alert">Los espacios no pueden estar vacios</div>}
         </Modal.Body>
       </Modal>
     </div>

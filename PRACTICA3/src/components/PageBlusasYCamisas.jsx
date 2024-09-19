@@ -29,7 +29,7 @@ function PageBlusasYCamisas() {
             <div className="blusas-card-content">
               <h2 className="blusas-product-description">{producto.nameProduct}</h2>
               <h5 className="blusas-product-description">{producto.descripcion}</h5>
-              <p className="blusas-product-price">Precio: ${producto.precio}</p>
+              <p className="blusas-product-price">Precio:  ₡{producto.precio}</p>
               <ModalCorreo />
             </div>
           </div>

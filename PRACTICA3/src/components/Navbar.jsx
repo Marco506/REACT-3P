@@ -68,7 +68,7 @@ function Navbar() {
               <Link className="nav-link active" aria-current="page" onClick={cerrarSesion} to="/">Salir</Link>
             </li>
           </ul>
-            <Buscador />
+           <Buscador />
         </div>
       </div>
     </nav>
