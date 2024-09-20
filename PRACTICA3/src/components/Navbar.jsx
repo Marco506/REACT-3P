@@ -2,7 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import"../styles/Navbar.css"
 import logo from '../img/logo.png'; 
-import Buscador from './Buscador';
+import ModalBuscador from './ModalBuscador';
+
 
 function Navbar() {
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ function Navbar() {
               <Link className="nav-link active" aria-current="page" onClick={cerrarSesion} to="/">Salir</Link>
             </li>
           </ul>
-           <Buscador />
+           <ModalBuscador />
         </div>
       </div>
     </nav>

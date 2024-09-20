@@ -4,8 +4,6 @@ import Navbar from "../components/Navbar";
 import PageHome from "../components/PageHome";
 
 
-
-
 function Home() {
   return (
     <div>
