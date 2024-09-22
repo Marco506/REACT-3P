@@ -25,23 +25,6 @@ function PageHome() {
         </p>
       </section>
       <PagePromociones />
-      <section className="page-home__values">
-        <h2 className="page-home__section-title">Nuestros Valores</h2>
-        <div className="page-home__values-container">
-          <div className="page-home__value">
-            <h3 className="page-home__value-title">Calidad</h3>
-            <p className="page-home__value-description">Cada prenda está confeccionada con los mejores materiales para garantizar durabilidad y confort.</p>
-          </div>
-          <div className="page-home__value">
-            <h3 className="page-home__value-title">Sostenibilidad</h3>
-            <p className="page-home__value-description">Nos comprometemos a prácticas sostenibles para proteger nuestro planeta.</p>
-          </div>
-          <div className="page-home__value">
-            <h3 className="page-home__value-title">Atención al Cliente</h3>
-            <p className="page-home__value-description">Nuestro equipo está aquí para ayudarte y asegurarse de que tengas la mejor experiencia de compra.</p>
-          </div>
-        </div>
-      </section>
       
       <section className="page-home__explore">
         <h2 className="page-home__section-title">Explora Más</h2>

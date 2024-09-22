@@ -34,6 +34,7 @@ function PagePromociones() {
                             <h2 className="blusas-product-description">{producto.nameProduct}</h2>
                             <h2 className='blusas-product-description'>{producto.descripcion}</h2>
                             <p className='blusas-product-price'>Precio:  ₡{producto.precio}</p>
+                            <p>{producto.categoria}</p>
                             <ModalCorreo />
                         </div>
                     </div>

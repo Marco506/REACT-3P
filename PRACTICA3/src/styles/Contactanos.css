@@ -1,0 +1,106 @@
+
+.cuerpo-contactanos {
+    max-width: 1000px; 
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .titulo-formulario {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .subtitulo-formulario {
+    text-align: center;
+    font-size: 1.25rem;
+    color: #777;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos del Formulario */
+  .formulario-correo {
+    display: flex;
+    flex-direction: column; /* Alinear elementos en columna */
+  }
+  
+  label {
+    margin-bottom: 5px; /* Espaciado entre etiqueta y campo */
+    font-weight: bold; /* Resaltar etiquetas */
+    color: #333; /* Color de las etiquetas */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 10px;
+    border: 1px solid #e1e1e1; /* Borde suave */
+    border-radius: 5px;
+    margin-bottom: 20px; /* Espaciado entre campos */
+    resize: vertical; /* Permitir cambiar el tamaño del textarea verticalmente */
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: #007BFF; /* Cambio de color en foco */
+    outline: none; /* Sin contorno predeterminado */
+  }
+  
+  hr {
+    border: none; 
+    height: 1px; 
+    background-color: #e1e1e1; 
+    margin: 20px 0; 
+  }
+  
+  
+  .boton-enviar {
+    background-color: #007BFF; 
+    color: white; 
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+  }
+  
+  .boton-enviar:hover {
+    background-color: #0056b3; 
+  }
+  
+  /* Pie de página */
+  .pie-pagina-contactanos {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+
+  @media (max-width: 768px) {
+    .cuerpo-contactanos {
+      padding: 15px; 
+    }
+  
+    .titulo-formulario {
+      font-size: 1.5rem; 
+    }
+  
+    .subtitulo-formulario {
+      font-size: 1rem; 
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      font-size: 0.9rem; 
+    }
+  }
+  
+  
+  

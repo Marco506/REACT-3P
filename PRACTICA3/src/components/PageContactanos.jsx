@@ -8,30 +8,37 @@ function PageContactanos() {
     event.preventDefault();
 
     emailjs.sendForm("service_dc8wd2j", "template_wi74xoh", event.target, "HzbKWKbh_CgF2RBKC")
-    .then(Response=> console.log(Response))
-    .catch(error => console.log(error))
-  }
+      .then(response => console.log(response))
+      .catch(error => console.log(error));
+  };
+
   return ( 
-
-    <div className='body-contactanos'>
-      <h1 className='title-form'>Contact Us</h1>
-      <form className='form-mail' onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name='user_name' />
-        <hr />
-
-        <label>Email</label>
-        <input type="email" name='user_email' />
-        <hr />
-
-        <label>Message</label>
-        <textarea name="user_message" id="" cols="30" rows="10"></textarea>
-        <hr />
-        <button>Send</button>
-      </form>
+    <div className='cuerpo-contactanos'>
+      <div className='formulario-container'>
+        <h1 className='titulo-formulario'>Contáctanos</h1>
+        <p className='subtitulo-formulario'>Estamos aquí para ayudarte. ¡Déjanos un mensaje!</p>
+        <form className='formulario-correo' onSubmit={sendEmail}>
+          <label>Nombre</label>
+          <input type="text" name='user_name' required />
+          
+          <label>Correo Electrónico</label>
+          <input type="email" name='user_email' required />
+          
+          <label>Mensaje</label>
+          <textarea name="user_message" cols="30" rows="10" required></textarea>
+          
+          <button type="submit" className='boton-enviar'>Enviar</button>
+        </form>
+        <footer className="pie-pagina-contactanos text-center mt-5">
+          <p className="texto-pie-pagina-contactanos">
+            Gracias por tu interés. Responderemos a tu mensaje lo más pronto posible.
+          </p>
+        </footer>
+      </div>
     </div>
-  )
+  );
 }
 
 export default PageContactanos;
+
 

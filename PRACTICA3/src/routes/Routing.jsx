@@ -11,6 +11,8 @@ import AgregarProductos from '../pages/AgregarProductos';
 import BlusasYCamisas from '../pages/BlusasYCamisas';
 import Vestidos from '../pages/Vestidos';
 import TrajesBaño from '../pages/TrajesBaño';
+import AcercaDeNosotros from '../pages/AcercaDeNosotros';
+import HomeUsuarios from '../pages/HomeUsuarios';
 
 
 
@@ -27,6 +29,9 @@ const Routing = () => {
        <Route path='/BlusasYCamisas' element={<BlusasYCamisas />} />
        <Route path='/Vestidos' element={<Vestidos />} />
        <Route path='/TrajesBaño' element={<TrajesBaño />} />
+       <Route path='/AcercaDeNosotros'element={<AcercaDeNosotros />} />
+       
+       <Route path='/HomeUsuarios'element={<ProtectedRoute><HomeUsuarios /></ProtectedRoute>} />
      
        
        

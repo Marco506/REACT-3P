@@ -12,3 +12,17 @@ export async function GetProductos() {
       throw error;
     }
   }
+
+  export async function GetProductosID(id) {
+    try {
+      const response = await fetch("http://localhost:3000/productos" + id);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+      const json = await response.json();
+      return json;
+    } catch (error) {
+      console.error("Error in GET request:", error.message);
+      throw error;
+    }
+  }

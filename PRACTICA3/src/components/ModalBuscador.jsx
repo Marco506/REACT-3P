@@ -9,7 +9,7 @@ import ModalCorreo from './ModalCorreo';
 function ModalBuscador() {
   const [show, setShow] = useState(false);
   const [buscador, setBuscador] = useState("");
-  
+
   const [productos, setProductos] = useState([]);
   const [todosLosProductos, setTodosLosProductos] = useState([]);
   

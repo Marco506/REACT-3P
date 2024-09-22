@@ -172,6 +172,7 @@ function PageProductos() {
         {productos.map(producto => (
           <div key={producto.id} className="producto-card">
             <div className="producto-image-container">
+              
               {producto.img && Array.isArray(producto.img) ? (
                 producto.img.map((src, index) => (
                   <img key={index} src={src} alt={`Producto ${index}`} className="producto-image" />

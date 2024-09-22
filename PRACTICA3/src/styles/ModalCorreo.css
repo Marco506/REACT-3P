@@ -1,0 +1,61 @@
+.cuerpo-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-dialog {
+    max-width: 400px; 
+    width: 100%;
+  }
+  
+  .modal-content {
+    background-color: #f0f4f8; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-header {
+    border-bottom: none; 
+  }
+  
+  .modal-title {
+    color: #333;
+  }
+  
+  .text-modal {
+    margin-top: 5px;
+    padding: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .text-modal:focus {
+    border-color: #007bff; /* Color al enfocar */
+    outline: none;
+  }
+  
+  .boton-enviar {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .boton-enviar:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+  }
+  
+  .modal-footer {
+    border-top: none; /* Quitar borde superior */
+  }
+  
+  
+  

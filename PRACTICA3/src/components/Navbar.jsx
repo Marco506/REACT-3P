@@ -33,7 +33,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/home">Novedades</Link>
+              <Link className="nav-link" to="/home">Inicio</Link>
             </li>
             <li className="nav-item dropdown">
               <Link 
@@ -64,6 +64,9 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/Contactanos">Contáctanos</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/AcercaDeNosotros">Acerca de nosotros</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" onClick={cerrarSesion} to="/">Salir</Link>
