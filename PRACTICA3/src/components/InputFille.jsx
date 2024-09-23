@@ -58,7 +58,7 @@ function PageProductos() {
     }
     try {
       await PostProductos({ nameProduct: inputNameProduct, descripcion: inputDescripcion, precio: inputPrecio, categoria: inputCategoria, img: inputImages });
-      const updatedProductos = await GetProductos();
+      const updatedProductos = await GetProductos();      
       setProductos(updatedProductos);
       setInputNameProduct("");
       setInputDescripcion("");
@@ -159,8 +159,10 @@ function PageProductos() {
           <option value="" disabled>Categoría</option>
           <option value="Vestido">Vestido</option>
           <option value="Camisas">Camisas</option>
+          <option value="Faldas">Faldas</option>
           <option value="Shorts">Shorts</option>
           <option value="Trajes de baño">Trajes de baño</option>
+          <option value="Conjuntos">Conjuntos</option>
           <option value="Promociones">Promociones</option>
         </select>
         <button onClick={addProducto} className="submit-button">Agregar</button>

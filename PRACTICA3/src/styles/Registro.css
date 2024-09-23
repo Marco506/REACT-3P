@@ -1,12 +1,12 @@
-/* Registro.css */
 
-/* Contenedor del formulario de registro */
+
+
 .register-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #121212;
+  background-image: url(../img/logo.png);
 }
 
 /* Formulario de registro */

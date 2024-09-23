@@ -46,20 +46,15 @@ function NavbarUsuario() {
                 Colección
               </Link>
               <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/Tareas">Tareas</Link></li>
                 <li><Link className="dropdown-item" to="/BlusasYCamisas">Blusas y Camisas</Link></li>
-                <li><Link className="dropdown-item" to="/Home">Faldas</Link></li>
+                <li><Link className="dropdown-item" to="/Faldas">Faldas</Link></li>
                 <li><Link className="dropdown-item" to="/Vestidos">Vestidos</Link></li>
-                <li><Link className="dropdown-item" to="/Home">Pantalones y Shorts</Link></li>
+                <li><Link className="dropdown-item" to="/Shorts">Shorts</Link></li>
                 <li><Link className="dropdown-item" to="/TrajesBaño">Trajes de baño</Link></li>
                 <li><div className="dropdown-divider"></div></li>
-                <li><Link className="dropdown-item" to="/Home">Something else here</Link></li>
+                <li><Link className="dropdown-item" to="/Conjuntos">Conjuntos</Link></li>
               </ul>
             </li>
-            <li className="nav-item">
-              <span className="nav-link disabled" aria-disabled="true">Disabled</span>
-            </li>
-           
 
            
             <li className="nav-item">

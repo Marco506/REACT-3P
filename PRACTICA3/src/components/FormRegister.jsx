@@ -11,6 +11,9 @@ function FormRegister() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [alerta1, setAlerta1] = useState(false);
+  const [alerta2, setAlerta2] = useState(false);
+
   function guardarUsuario(event) {
     setUsername(event.target.value);
   }
@@ -29,11 +32,19 @@ function FormRegister() {
     let listUsers = await GetUsers();
     let userRegister = listUsers.find((user) => user.email === email);
     if (userRegister) {
-      return alert("El correo ya existe");
+      setAlerta1(true)
+
+      setTimeout(() => {
+        setAlerta1(false)
+      }, 2000);
     }
 
     if (password.length < 8) {
-      return alert("La contraseña debe contener más de 8 dígitos");
+     setAlerta2(true)
+
+      setTimeout(() => {
+        setAlerta2(false)
+      }, 2000);
     }
 
     await PostUsers({ name: username, email: email, password: password });
@@ -44,6 +55,8 @@ function FormRegister() {
 
   return (
     <div className="register-container">
+      {alerta1 && <div className="alert alert-success" role="alert">El correo ya existe</div>}
+      {alerta2 && <div className="alert alert-success" role="alert">La contraseña debe contener más de 8 dígitos</div>}
       <form id="register-form" onSubmit={cargar}>
         <h2 className="register-form-title">Registro</h2>
         <label htmlFor="name" className="register-form-label">Nombre</label>

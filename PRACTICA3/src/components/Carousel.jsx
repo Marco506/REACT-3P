@@ -1,7 +1,7 @@
 
 import caro1 from "../img/caro1.jpg";
 import caro2 from "../img/caro2.jpg";
-import IMG3 from "../img/IMG3.jpg";
+
 
 function Carousel() {
   return (
@@ -15,7 +15,7 @@ function Carousel() {
           <img src={caro2} className="d-block w-100" alt="Imagen de Muestra 2" style={{ height: '100%', objectFit: 'cover' }} />
         </div>
         <div className="carousel-item">
-          <img src={IMG3}  className="d-block w-100" alt="Imagen de Muestra 3" style={{ height: '100%', objectFit: 'cover' }} />
+          <img src="https://img.freepik.com/vector-gratis/fondo-tienda-moda-dibujado-mano_23-2150849915.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721606400&semt=ais_user"  className="d-block w-100" alt="Imagen de Muestra 3" style={{ height: '100%', objectFit: 'cover' }} />
         </div>
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

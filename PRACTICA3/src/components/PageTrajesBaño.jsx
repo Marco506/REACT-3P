@@ -18,7 +18,7 @@ function PageTrajesBaño() {
 
   return (
     <div className='blusas-container' >
-        <h1 className='blusas-title'>Trajes de baño</h1> 
+        <h1 className='blusas-title'>Bienvenidos a: trajes de baño, juli-seams</h1> 
         <div className='blusas-card-container'>
             {productos.map(producto => (
                 <div className='blusas-card' key={producto.id}>

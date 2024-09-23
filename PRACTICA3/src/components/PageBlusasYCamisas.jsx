@@ -19,7 +19,7 @@ function PageBlusasYCamisas() {
 
   return (
     <div className="blusas-container">
-      <h1 className="blusas-title">Bienvenidos a Blusas y Camisas juli-seams</h1>
+      <h1 className="blusas-title">Bienvenidos a: Blusas y Camisas, juli-seams</h1>
       <div className="blusas-card-container">
         {productos.map(producto => (
           <div className="blusas-card" key={producto.id}>

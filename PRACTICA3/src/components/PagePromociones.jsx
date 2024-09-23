@@ -31,8 +31,8 @@ function PagePromociones() {
                             <img key={index} src={src} alt={producto.nameProduct} className='blusas-product-image' />
                         ))}
                         <div className='blusas-card-content'>
-                            <h2 className="blusas-product-description">{producto.nameProduct}</h2>
-                            <h2 className='blusas-product-description'>{producto.descripcion}</h2>
+                            <h4 className="blusas-product-nombre">{producto.nameProduct}</h4>
+                            <p className='blusas-product-description'>{producto.descripcion}</p>
                             <p className='blusas-product-price'>Precio:  ₡{producto.precio}</p>
                             <p>{producto.categoria}</p>
                             <ModalCorreo />

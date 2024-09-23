@@ -12,6 +12,8 @@ function ModalCorreo() {
   const manejarCerrar = () => setMostrarModal(false);
   const manejarMostrar = () => setMostrarModal(true);
 
+  console.log(inputProducto.nameProduct);
+
   const enviarCorreo = (event) => {
     event.preventDefault();
     emailjs.sendForm("service_dc8wd2j", "template_3wvszvh", event.target, "HzbKWKbh_CgF2RBKC")
@@ -22,8 +24,8 @@ function ModalCorreo() {
   useEffect(() => {
     const cargarProducto = async () => {
       const productos = await GetProductos();
-      if (productos.length > 0) {
-        setInputProducto(productos[0]); // Establece el primer producto como ejemplo
+      for (let i = 0; i < productos.length; i++) {
+        setInputProducto(productos[i]); // Establece el primer producto como ejemplo
       }
     };
     cargarProducto();
@@ -50,12 +52,13 @@ function ModalCorreo() {
             <hr />
             
             <label>Nombre de Producto</label>
+            
             {inputProducto && (
               <input
                 className='text-modal'
                 type="text"
                 value={inputProducto.nameProduct}
-                readOnly // Hacerlo solo lectura
+                readOnly
                 name='nameProduct'
               />
             )}
