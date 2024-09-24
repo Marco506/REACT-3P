@@ -27,17 +27,17 @@ function PageHome() {
       <PagePromociones />
       
       <section className="page-home__explore">
-        <h2 className="page-home__section-title">Explora Más</h2>
+        <h2 className="page-home__section-title">Descubre toda la colección</h2>
         <div className="page-home__explore-container">
           <div className="page-home__explore-item">
-            <h3 className="page-home__explore-title">Colección de Invierno</h3>
-            <p className="page-home__explore-description">Descubre nuestra nueva colección de ropa de invierno, diseñada para mantenerte cálido y elegante.</p>
-            <Link to="/colecciones/invierno" className="page-home__explore-cta">Explorar</Link>
+            <h3 className="page-home__explore-title">Colección de blusas</h3>
+            <p className="page-home__explore-description">Descubre nuestra nueva colección de blusas, diseñadas para ofrecerte calidez y estilo en cada ocasión. Con cortes modernos y materiales de alta calidad, cada blusa es perfecta para mantenerte elegante y cómoda, sin importar el clima. ¡Explora nuestra variedad y encuentra tu favorita!.</p>
+            <Link to="/BlusasYCamisas" className="page-home__explore-cta">Explorar</Link>
           </div>
           <div className="page-home__explore-item">
-            <h3 className="page-home__explore-title">Ofertas Especiales</h3>
-            <p className="page-home__explore-description">Aprovecha nuestras ofertas especiales y encuentra grandes descuentos en tus productos favoritos.</p>
-            <Link to="/ofertas" className="page-home__explore-cta">Ver Ofertas</Link>
+            <h3 className="page-home__explore-title">Colección de vestidos</h3>
+            <p className="page-home__explore-description">Descubre nuestra nueva colección de vestidos, diseñados para realzar tu estilo y brindarte comodidad en cada ocasión. Con tejidos suaves y cortes elegantes, cada pieza está pensada para acompañarte en tus momentos más especiales. ¡Atrévete a lucir espectacular! .</p>
+            <Link to="/Vestidos" className="page-home__explore-cta">Explorar</Link>
           </div>
         </div>
       </section>

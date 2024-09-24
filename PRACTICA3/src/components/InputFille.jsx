@@ -8,6 +8,7 @@ import { PutProductos } from '../services/ProductosAgregados/PutProductos';
 import "../styles/InputFille.css"; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
+import AlertaModal from './AlertaModal';
 
 function PageProductos() {
   const [inputNameProduct, setInputNameProduct] = useState("");
@@ -16,26 +17,22 @@ function PageProductos() {
   const [inputCategoria, setInputCategoria] = useState("");
   const [inputImages, setInputImages] = useState([]);
   const [productos, setProductos] = useState([]);
-  //HOOKS ALERTAS
-  const [alert3, setAlert3] = useState(false)
-  const [alert, setAlert] = useState(false)
-  const [alertVisible, setAlertVisible] = useState(false);
+ // Estado del AlertModal
+ const [modalOpen, setModalOpen] = useState(false);
+ const [modalMessage, setModalMessage] = useState({ title: '', content: '' });
   //MODALES
   const [showModal, setShowModal] = useState(false);
   const [correctProduct, setCorrectProduct] = useState(null);
 
   useEffect(() => {
     const fetchProductos = async () => {
-      try {
         const data = await GetProductos();
-        setProductos(data);
-      } catch (error) {
-        console.error('Error al obtener productos:', error);
-      }
+        setProductos(data); 
     };
     fetchProductos(); 
   }, []);
 
+//Base 64
   const imagenBase64 = (event) => {
     const files = Array.from(event.target.files);
     Promise.all(files.map(file => new Promise((resolve, reject) => {
@@ -48,15 +45,16 @@ function PageProductos() {
     .catch(error => console.error('Error al leer imágenes:', error));
   };
 
+
   const addProducto = async () => {
-    if (!inputNameProduct || !inputDescripcion || !inputPrecio || !inputCategoria || inputImages.length === 0) {
-     setAlert(true)
-     setTimeout(() => setAlert(false), 3000 )
-      
-  
-      return;
+    if (!inputNameProduct || !inputDescripcion || !inputPrecio || !inputCategoria || inputImages.length === 0  ) {
+
+      setModalMessage({ title: 'Error', content: 'Los espacios no pueden estar vacios' });
+      setModalOpen(true);
+      return
     }
-    try {
+  
+    //Se guardan los productos
       await PostProductos({ nameProduct: inputNameProduct, descripcion: inputDescripcion, precio: inputPrecio, categoria: inputCategoria, img: inputImages });
       const updatedProductos = await GetProductos();      
       setProductos(updatedProductos);
@@ -65,13 +63,18 @@ function PageProductos() {
       setInputPrecio("");
       setInputCategoria("");
       setInputImages([]);
-      setAlertVisible(true);
-      setTimeout(() => setAlertVisible(false), 3000);
-    } catch (error) {
-      console.error('Error al agregar producto:', error);
-    }
+
+      setModalMessage({ title: 'Exito', content: 'Se agrego un producto' });
+      setModalOpen(true);
+
+      setTimeout(() => {
+        setModalOpen(false)
+      }, 2000);
+     
+    
+   
   };
-//ELIMINAR EL PRODUCTO
+ //ELIMINAR EL PRODUCTO
   const deleteProducto = async (id) => {
     try {
       await DeleteProductos(id);
@@ -88,15 +91,16 @@ function PageProductos() {
     setInputPrecio(producto.precio);
     setInputCategoria(producto.categoria);
     setInputImages(producto.img || []);
+    
     setShowModal(true);
   };
 
   const editSubmit = async () => {
     if (!inputNameProduct || !inputDescripcion || !inputPrecio || !inputCategoria) {
-      setAlert3(true)
-     setTimeout(() => setAlert3(false), 3000 )
-      
-      return;
+
+      setModalMessage({ title: 'Error', content: 'Los espacios no pueden estar vacios' });
+      setModalOpen(true);
+      return
     }
     try {
       await PutProductos(correctProduct.id, {
@@ -167,8 +171,6 @@ function PageProductos() {
         </select>
         <button onClick={addProducto} className="submit-button">Agregar</button>
 
-        {alert && <div className="alert alert-danger" role="alert">Los espacios no pueden estar vacios</div>}
-        {alertVisible && <div className="alert alert-secondary" role="alert">Se agregó un nuevo producto</div>}
       </div>
       <div className="productos-container">
         {productos.map(producto => (
@@ -193,7 +195,7 @@ function PageProductos() {
                   <FaTrash />
                 </button>
                 <button className="edit-button" onClick={() => editProducto(producto)}>
-                  <BiSolidEditAlt />
+                  <BiSolidEditAlt/>
                 </button>
               </div>
             </div>
@@ -239,10 +241,12 @@ function PageProductos() {
           >
             <option value="" disabled>Categoría</option>
             <option value="Vestido">Vestido</option>
-            <option value="Camisas">Camisas</option>
-            <option value="Shorts">Shorts</option>
-            <option value="Trajes de baño">Trajes de baño</option>
-            <option value="Promociones">Promociones</option>
+          <option value="Camisas">Camisas</option>
+          <option value="Faldas">Faldas</option>
+          <option value="Shorts">Shorts</option>
+          <option value="Trajes de baño">Trajes de baño</option>
+          <option value="Conjuntos">Conjuntos</option>
+          <option value="Promociones">Promociones</option>
           </select>
           <label className="file-label">
             <input
@@ -253,10 +257,12 @@ function PageProductos() {
             />
             <span>Agregar Imágenes</span>
           </label>
-          <button onClick={editSubmit}>Guardar Cambios</button>
-          {alert3 && <div className="alert alert-secondary" role="alert">Los espacios no pueden estar vacios</div>}
+          <button className='submit-button' onClick={editSubmit}>Guardar Cambios</button>
+         
         </Modal.Body>
       </Modal>
+      {/* Modal */}
+      <AlertaModal isOpen={modalOpen} message={modalMessage} onClose={() => setModalOpen(false)} />
     </div>
   );
 }

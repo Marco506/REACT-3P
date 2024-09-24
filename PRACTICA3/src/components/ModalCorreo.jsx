@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import emailjs from '@emailjs/browser';
-import { GetProductos } from '../services/ProductosAgregados/GetProductos';
-import '../styles/ModalCorreo.css'; // Asegúrate de importar tu CSS
+import '../styles/ModalCorreo.css'; 
 
 function ModalCorreo() {
   const [mostrarModal, setMostrarModal] = useState(false);
@@ -12,7 +11,6 @@ function ModalCorreo() {
   const manejarCerrar = () => setMostrarModal(false);
   const manejarMostrar = () => setMostrarModal(true);
 
-  console.log(inputProducto.nameProduct);
 
   const enviarCorreo = (event) => {
     event.preventDefault();
@@ -23,10 +21,10 @@ function ModalCorreo() {
 
   useEffect(() => {
     const cargarProducto = async () => {
-      const productos = await GetProductos();
-      for (let i = 0; i < productos.length; i++) {
-        setInputProducto(productos[i]); // Establece el primer producto como ejemplo
-      }
+     
+      
+        setInputProducto(); 
+      
     };
     cargarProducto();
   }, []);
@@ -52,16 +50,12 @@ function ModalCorreo() {
             <hr />
             
             <label>Nombre de Producto</label>
-            
-            {inputProducto && (
               <input
                 className='text-modal'
                 type="text"
-                value={inputProducto.nameProduct}
-                readOnly
+                value={inputProducto}
                 name='nameProduct'
               />
-            )}
             <hr />
 
             <label>Mensaje</label>

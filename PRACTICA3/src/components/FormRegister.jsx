@@ -3,6 +3,7 @@ import { PostUsers } from "../services/PostUsers";
 import { GetUsers } from "../services/GetUsers";
 import "../styles/Registro.css";
 import { useNavigate } from "react-router-dom";
+import AlertaModal from "./AlertaModal";
 
 function FormRegister() {
 
@@ -11,8 +12,9 @@ function FormRegister() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [alerta1, setAlerta1] = useState(false);
-  const [alerta2, setAlerta2] = useState(false);
+  // Estado del AlertModal
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState({ title: '', content: '' });
 
   function guardarUsuario(event) {
     setUsername(event.target.value);
@@ -32,31 +34,25 @@ function FormRegister() {
     let listUsers = await GetUsers();
     let userRegister = listUsers.find((user) => user.email === email);
     if (userRegister) {
-      setAlerta1(true)
-
-      setTimeout(() => {
-        setAlerta1(false)
-      }, 2000);
+      setModalMessage({ title: 'Error', content: 'Ya hay un Email registrado' });
+      setModalOpen(true);
+      return
     }
 
     if (password.length < 8) {
-     setAlerta2(true)
-
-      setTimeout(() => {
-        setAlerta2(false)
-      }, 2000);
+      setModalMessage({ title: 'Error', content: 'La contraseña debe tener mas de 8 dijitos' });
+      setModalOpen(true);
+      return
     }
 
     await PostUsers({ name: username, email: email, password: password });
 
-    alert("Registro exitoso");
     Navigate("/Login")
   };
 
   return (
     <div className="register-container">
-      {alerta1 && <div className="alert alert-success" role="alert">El correo ya existe</div>}
-      {alerta2 && <div className="alert alert-success" role="alert">La contraseña debe contener más de 8 dígitos</div>}
+      
       <form id="register-form" onSubmit={cargar}>
         <h2 className="register-form-title">Registro</h2>
         <label htmlFor="name" className="register-form-label">Nombre</label>
@@ -96,6 +92,8 @@ function FormRegister() {
         />
         <p className="register-form-info">¿Ya tienes una cuenta? <a href="/login" className="register-form-link">Iniciar sesión</a></p>
       </form>
+      {/* Modal */}
+      <AlertaModal isOpen={modalOpen} message={modalMessage} onClose={() => setModalOpen(false)} />
     </div>
   );
 }

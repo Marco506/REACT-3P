@@ -9,9 +9,9 @@
   background-image: url(../img/logo.png);
 }
 
-/* Formulario de registro */
+
 #register-form {
-  background: #1e1e1e;
+  background: #1e1e1ea8;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   padding: 2rem;
@@ -20,7 +20,6 @@
   color: #e0e0e0; 
 }
 
-/* Título del formulario de registro */
 .register-form-title {
   font-size: 26px;
   font-weight: bold;
@@ -29,7 +28,7 @@
   color: #ffffff; 
 }
 
-/* Etiquetas del formulario de registro */
+
 .register-form-label {
   display: block;
   margin-bottom: 0.5rem;
@@ -37,7 +36,6 @@
   color: #b0b0b0; 
 }
 
-/* Campos de entrada del formulario de registro */
 .register-form-input {
   width: 100%;
   padding: 0.75rem;
@@ -50,13 +48,12 @@
   outline: none; 
 }
 
-/* Cambios al enfocar el campo */
 .register-form-input:focus {
   background: #333333; 
   border-color: #007bff; 
 }
 
-/* Botón de envío del formulario de registro */
+
 .register-form-submit {
   background-color: #007bff;
   color: #ffffff;
@@ -73,13 +70,13 @@
   background-color: #0056b3;
 }
 
-/* Enlace de información adicional en el formulario de registro */
+
 .register-form-info {
   text-align: center;
   margin-top: 1rem;
 }
 
-/* Enlace en el formulario de registro */
+
 .register-form-link {
   color: #007bff;
   text-decoration: none;
@@ -90,9 +87,3 @@
   text-decoration: underline;
 }
 
-/* Mensaje de error en el formulario de registro */
-.register-form-error {
-  color: #ff6f6f;
-  font-size: 14px;
-  margin-bottom: 1rem;
-}

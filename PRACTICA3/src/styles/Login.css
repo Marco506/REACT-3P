@@ -1,4 +1,4 @@
-/* Login.css */
+
 
 
 .login-container {
@@ -9,9 +9,9 @@
     background-image: url(../img/logo.png); 
   }
   
-  /* Formulario de inicio de sesión */
+ 
   #login-form {
-    background: #1e1e1e; 
+    background: #1e1e1e98; 
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     padding: 2rem;
@@ -37,7 +37,7 @@
     color: #b0b0b0; 
   }
   
-  /* Campos de entrada del formulario de inicio de sesión */
+  /* Campos de entrada  */
   .login-form-input {
     width: 100%;
     padding: 0.75rem;
@@ -50,13 +50,13 @@
     outline: none; 
   }
   
-  /* Cambios al enfocar el campo */
+ 
   .login-form-input:focus {
     background: #333333; 
     border-color: #28a745; 
   }
   
-  /* Botón de envío del formulario de inicio de sesión */
+  
   .login-form-submit {
     background-color: #28a745; 
     color: #ffffff; 
