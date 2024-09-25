@@ -90,7 +90,7 @@ function FormRegister() {
           value="Registrar"
           className="register-form-submit"
         />
-        <p className="register-form-info">¿Ya tienes una cuenta? <a href="/login" className="register-form-link">Iniciar sesión</a></p>
+        <p className="register-form-info">¿Ya tienes una cuenta? <a href="/Login" className="register-form-link">Iniciar sesión</a></p>
       </form>
       {/* Modal */}
       <AlertaModal isOpen={modalOpen} message={modalMessage} onClose={() => setModalOpen(false)} />
