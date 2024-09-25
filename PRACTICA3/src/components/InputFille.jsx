@@ -73,7 +73,7 @@ function PageProductos() {
     setModalMessage({ title: 'Exito', content: 'Se agrego un producto' });
     setModalOpen(true);
 
-    // Cierre automático del modal tras 2 segundos
+
     setTimeout(() => {
       setModalOpen(false);
     }, 2000);

@@ -24,7 +24,7 @@ function PageBlusasYCamisas() {
         {productos.map(producto => (
           <div className="blusas-card" key={producto.id}>
             {producto.img.map((src, index) => (
-              <img key={index} src={src} alt={producto.descripcion} className="blusas-product-image" />
+              <img key={index} src={src} className="blusas-product-image" />
             ))}
             <div className="blusas-card-content">
               <h2 className="blusas-product-description">{producto.nameProduct}</h2>
