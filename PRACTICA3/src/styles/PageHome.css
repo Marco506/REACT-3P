@@ -48,8 +48,8 @@
 
 .page-home__explore-container {
   display: flex;
-  flex-direction: column; /* Para móviles, cambiar a columna */
-  gap: 20px; /* Espacio entre elementos */
+  flex-direction: column; 
+  gap: 20px; 
 }
 
 .page-home__explore-item {

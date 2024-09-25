@@ -51,25 +51,25 @@ function PageProductos() {
 
   // Función para agregar un nuevo producto
   const addProducto = async () => {
-    // Validación de campos
+    
     if (!inputNameProduct || !inputDescripcion || !inputPrecio || !inputCategoria || inputImages.length === 0) {
       setModalMessage({ title: 'Error', content: 'Los espacios no pueden estar vacios' });
       setModalOpen(true);
-      return; // Sale si hay campos vacíos
+      return;
     }
     
     // Llamada para guardar el producto
     await PostProductos({ nameProduct: inputNameProduct, descripcion: inputDescripcion, precio: inputPrecio, categoria: inputCategoria, img: inputImages });
     const updatedProductos = await GetProductos(); // Obtención de la lista actualizada
     setProductos(updatedProductos); // Actualiza la lista de productos
-    // Resetea los campos del formulario
+    
     setInputNameProduct("");
     setInputDescripcion("");
     setInputPrecio("");
     setInputCategoria("");
     setInputImages([]);
     
-    // Mensaje de éxito
+    
     setModalMessage({ title: 'Exito', content: 'Se agrego un producto' });
     setModalOpen(true);
 
@@ -230,26 +230,26 @@ function PageProductos() {
             type="text"
             placeholder="Nombre de producto"
             value={inputNameProduct}
-            onChange={e => setInputNameProduct(e.target.value)} // Actualiza el estado
+            onChange={e => setInputNameProduct(e.target.value)} 
             className="input-field"
           />
           <input
             type="text"
             placeholder="Descripción"
             value={inputDescripcion}
-            onChange={e => setInputDescripcion(e.target.value)} // Actualiza el estado
+            onChange={e => setInputDescripcion(e.target.value)} 
             className="input-field"
           />
           <input
             type="number"
             placeholder="Precio"
             value={inputPrecio}
-            onChange={e => setInputPrecio(e.target.value)} // Actualiza el estado
+            onChange={e => setInputPrecio(e.target.value)}
             className="input-field"
           />
           <select
             value={inputCategoria}
-            onChange={e => setInputCategoria(e.target.value)} // Actualiza el estado
+            onChange={e => setInputCategoria(e.target.value)}
             className="input-field"
           >
             <option value="" disabled>Categoría</option>

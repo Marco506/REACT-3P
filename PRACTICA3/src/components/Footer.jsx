@@ -13,6 +13,7 @@ function Footer() {
           <p>Email: <a href="juli_seams@gmail.com">juli_seams@gmail.com</a></p>
           <p>Teléfono: +506 85105125</p>
           <p>Dirección:Roble, Puntarenas, Costa Rica</p>
+          <p>Horario de atencion; de lunes a viernes de 7am - 7pm</p>
           <Maps />
         </div>
         <div className="footer-section">
@@ -33,10 +34,11 @@ function Footer() {
           </p>
           <p><a href="/Login">Iniciar Sesión</a></p>
           <p><a href="/">Registrarse</a></p>
+
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Tu Tienda de Ropa. Todos los derechos reservados.</p>
+        <p> Tu Tienda de Ropa. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
