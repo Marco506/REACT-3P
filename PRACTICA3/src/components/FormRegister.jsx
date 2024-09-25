@@ -46,8 +46,14 @@ function FormRegister() {
     }
 
     await PostUsers({ name: username, email: email, password: password });
-
-    Navigate("/Login")
+    
+    setModalMessage({ title: '', content: 'Registro Exitoso' });
+    setModalOpen(true);
+    setTimeout(() => {
+      setModalOpen(false);
+      Navigate("/Login");
+    }, 2000);
+    
   };
 
   return (
