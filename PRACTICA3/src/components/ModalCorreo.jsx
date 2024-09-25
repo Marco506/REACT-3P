@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import emailjs from '@emailjs/browser';
@@ -6,28 +6,30 @@ import '../styles/ModalCorreo.css';
 
 function ModalCorreo() {
   const [mostrarModal, setMostrarModal] = useState(false);
-  const [inputProducto, setInputProducto] = useState({});
+  const [formData, setFormData] = useState({ nombre: '', email: '', producto: '', mensaje: '' });
 
   const manejarCerrar = () => setMostrarModal(false);
   const manejarMostrar = () => setMostrarModal(true);
 
-
   const enviarCorreo = (event) => {
     event.preventDefault();
+   
+
     emailjs.sendForm("service_dc8wd2j", "template_3wvszvh", event.target, "HzbKWKbh_CgF2RBKC")
-      .then(response => console.log(response))
-      .catch(error => console.log(error));
+      .then(response => {
+        console.log(response);
+
+        alert("Correo enviado con éxito!");
+        manejarCerrar();
+        setFormData({ nombre: '', email: '', producto: '', mensaje: '' }); // Reinicia el formulario
+      })
+      .catch(error => {
+        console.log(error);
+        alert("Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.");
+      }); 
   };
 
-  useEffect(() => {
-    const cargarProducto = async () => {
-     
-      
-        setInputProducto(); 
-      
-    };
-    cargarProducto();
-  }, []);
+  
 
   return (
     <>
@@ -42,24 +44,29 @@ function ModalCorreo() {
         <Modal.Body>
           <form className='form-mail-modal' onSubmit={enviarCorreo}>
             <label>Nombre</label>
-            <input type="text" name='name' required className='text-modal' />
+            <input type="text" name='name' required className='text-modal'
+            onChange={(e) => setFormData({ ...formData, nombre: e.target.value })} />
             <hr />
 
             <label>Correo Electrónico</label>
-            <input type="email" name='email' required className='text-modal' />
+            <input type="email" name='email' required className='text-modal'
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
             <hr />
             
             <label>Nombre de Producto</label>
-              <input
-                className='text-modal'
-                type="text"
-                value={inputProducto}
-                name='nameProduct'
-              />
+            <input
+              className='text-modal'
+              type="text"
+              name='nameProduct'
+              required
+              onChange={(e) => setFormData({ ...formData, producto: e.target.value })}
+            />
             <hr />
 
             <label>Mensaje</label>
-            <textarea name="message" cols="30" rows="5" required className='text-modal'></textarea>
+            <textarea name="message" cols="30" rows="5" required className='text-modal'
+            onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
+            ></textarea>
             <hr />
             <Button type="submit" className='boton-enviar'>Enviar</Button>
           </form>
@@ -72,4 +79,5 @@ function ModalCorreo() {
 }
 
 export default ModalCorreo;
+
 
