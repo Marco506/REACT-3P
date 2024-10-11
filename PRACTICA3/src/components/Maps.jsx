@@ -1,4 +1,4 @@
-const Maps = () => {
+ const Maps = () => {
     return (
 
         <div className="mapaCont">
